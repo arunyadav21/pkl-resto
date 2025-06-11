@@ -4,6 +4,8 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
 function Category() {
     const [slide, setSlide] = useState(0);
     const [categories, setCategory] = useState([]);
+
+    const baseUrl=  import.meta.env.VITE_API_BASE_URL;
     
 
     const fetchCategory = async () => {
@@ -58,7 +60,7 @@ function Category() {
                         {categories.map((cat, index) => {
                             return (
                                 <div key={index} className='w-[150px] shrink-0 mx-2'>
-                                    <img src={"http://localhost:5000/images/" + cat.image} alt={cat.name} />
+                                    <img src={`${baseUrl}/images/` + cat.image} alt={cat.name} />
                                 </div>
                             );
                         })}

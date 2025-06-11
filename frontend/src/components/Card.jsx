@@ -2,13 +2,14 @@
 import React from 'react';
 
 const Card = (props) => {
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
   return (
     <div className='w-[273px] shrink-0 grow'>
       <div className=' group h-[182px] rounded-[15px] overflow-hidden relative'>
         {props.image && (
           <img
             className='group-hover:scale-110 duration-200 object-cover w-full h-full'
-            src={`http://localhost:5000/images/${props.image}`}
+            src={`${baseUrl}/images/${props.image}`}
             alt='card'
           />
         )}
